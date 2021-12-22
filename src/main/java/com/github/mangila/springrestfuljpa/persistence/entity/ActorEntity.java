@@ -33,7 +33,7 @@ public class ActorEntity extends Auditable {
     @Convert(converter = URIConverter.class)
     private URI picture;
 
-    @ManyToMany(targetEntity = MovieEntity.class, fetch = FetchType.EAGER)
+    @ManyToMany(targetEntity = MovieEntity.class, cascade = CascadeType.ALL)
     @JoinTable(
             name = "movie_actor",
             joinColumns = @JoinColumn(name = "actor_id"),
