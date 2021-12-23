@@ -1,13 +1,15 @@
 package com.github.mangila.springrestfuljpa.persistence.entity.embeddable;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.Embeddable;
 
-@Embeddable
+@Builder
 @Getter
 @Setter
+@Embeddable
+@NoArgsConstructor
+@AllArgsConstructor
 public class Publisher {
     private String name;
 }

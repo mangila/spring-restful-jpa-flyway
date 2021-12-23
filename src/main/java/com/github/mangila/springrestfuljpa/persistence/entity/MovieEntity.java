@@ -3,19 +3,20 @@ package com.github.mangila.springrestfuljpa.persistence.entity;
 import com.github.mangila.springrestfuljpa.persistence.entity.audit.Auditable;
 import com.github.mangila.springrestfuljpa.persistence.entity.converter.URIConverter;
 import com.github.mangila.springrestfuljpa.persistence.entity.embeddable.Publisher;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.net.URI;
 import java.util.HashSet;
 import java.util.Set;
 
+@Builder
 @Getter
 @Setter
+@AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "movie")
+@Table(name = "movie")
+@Entity
 public class MovieEntity extends Auditable {
 
     @Id
@@ -26,7 +27,12 @@ public class MovieEntity extends Auditable {
     @Version
     private Long version;
 
-    private String name;
+    private String title;
+
+    @Setter(AccessLevel.NONE)
+    @ManyToOne(targetEntity = DirectorEntity.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "director_id")
+    private DirectorEntity director;
 
     @Embedded
     @AttributeOverrides({
@@ -45,8 +51,18 @@ public class MovieEntity extends Auditable {
         actorEntity.getMovies().add(this);
     }
 
+    public void addDirector(DirectorEntity directorEntity) {
+        this.director = directorEntity;
+        directorEntity.getMovies().add(this);
+    }
+
     public void removeActor(ActorEntity actorEntity) {
         actors.remove(actorEntity);
         actorEntity.getMovies().remove(this);
+    }
+
+    public void removeDirector(DirectorEntity directorEntity) {
+        this.director = null;
+        directorEntity.getMovies().remove(this);
     }
 }
