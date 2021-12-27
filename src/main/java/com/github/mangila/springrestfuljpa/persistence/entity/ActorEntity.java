@@ -23,9 +23,6 @@ public class ActorEntity extends Auditable {
     @Column(name = "actor_id", nullable = false)
     private Long actorId;
 
-    @Version
-    private Long version;
-
     private String name;
 
     @OneToOne(mappedBy = "actor")

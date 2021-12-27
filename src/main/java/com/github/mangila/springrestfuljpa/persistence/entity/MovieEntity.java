@@ -24,9 +24,6 @@ public class MovieEntity extends Auditable {
     @Column(name = "movie_id", nullable = false)
     private Long movieId;
 
-    @Version
-    private Long version;
-
     private String title;
 
     @Setter(AccessLevel.NONE)

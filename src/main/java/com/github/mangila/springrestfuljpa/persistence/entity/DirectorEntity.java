@@ -23,9 +23,6 @@ public class DirectorEntity extends Auditable {
     @Column(name = "director_id", nullable = false)
     private Long directorId;
 
-    @Version
-    private Long version;
-
     private String name;
 
     @Convert(converter = URIConverter.class)
