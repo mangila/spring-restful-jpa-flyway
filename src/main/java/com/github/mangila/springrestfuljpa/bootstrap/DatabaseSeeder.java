@@ -4,7 +4,7 @@ import com.github.mangila.springrestfuljpa.persistence.entity.ActorEntity;
 import com.github.mangila.springrestfuljpa.persistence.entity.DirectorEntity;
 import com.github.mangila.springrestfuljpa.persistence.entity.MovieEntity;
 import com.github.mangila.springrestfuljpa.persistence.entity.embeddable.Publisher;
-import com.github.mangila.springrestfuljpa.persistence.entity.enums.Genre;
+import com.github.mangila.springrestfuljpa.persistence.entity.constant.Genre;
 import com.github.mangila.springrestfuljpa.persistence.repository.ActorRepository;
 import com.github.mangila.springrestfuljpa.persistence.repository.DirectorRepository;
 import com.github.mangila.springrestfuljpa.persistence.repository.MovieRepository;
