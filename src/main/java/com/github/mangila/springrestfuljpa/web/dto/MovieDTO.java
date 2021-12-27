@@ -17,6 +17,7 @@ public class MovieDTO {
     private String title;
     private Publisher publisher;
     private URI banner;
+    private String genre;
     private DirectorProjectionDTO director;
     private List<ActorProjectionDTO> actors;
 }

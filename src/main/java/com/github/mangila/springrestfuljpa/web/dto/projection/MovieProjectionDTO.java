@@ -12,5 +12,6 @@ public class MovieProjectionDTO {
     private Long movieId;
     private String title;
     private Publisher publisher;
+    private String genre;
     private URI banner;
 }

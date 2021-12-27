@@ -3,6 +3,7 @@ package com.github.mangila.springrestfuljpa.persistence.entity;
 import com.github.mangila.springrestfuljpa.persistence.entity.audit.Auditable;
 import com.github.mangila.springrestfuljpa.persistence.entity.converter.URIConverter;
 import com.github.mangila.springrestfuljpa.persistence.entity.embeddable.Publisher;
+import com.github.mangila.springrestfuljpa.persistence.entity.enums.Genre;
 import lombok.*;
 
 import javax.persistence.*;
@@ -25,6 +26,9 @@ public class MovieEntity extends Auditable {
     private Long movieId;
 
     private String title;
+
+    @Enumerated(EnumType.STRING)
+    private Genre genre;
 
     @Setter(AccessLevel.NONE)
     @ManyToOne(targetEntity = DirectorEntity.class, cascade = CascadeType.ALL)

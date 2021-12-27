@@ -4,6 +4,7 @@ import com.github.mangila.springrestfuljpa.persistence.entity.ActorEntity;
 import com.github.mangila.springrestfuljpa.persistence.entity.DirectorEntity;
 import com.github.mangila.springrestfuljpa.persistence.entity.MovieEntity;
 import com.github.mangila.springrestfuljpa.persistence.entity.embeddable.Publisher;
+import com.github.mangila.springrestfuljpa.persistence.entity.enums.Genre;
 import com.github.mangila.springrestfuljpa.persistence.repository.ActorRepository;
 import com.github.mangila.springrestfuljpa.persistence.repository.DirectorRepository;
 import com.github.mangila.springrestfuljpa.persistence.repository.MovieRepository;
@@ -97,10 +98,12 @@ public class DatabaseSeeder implements CommandLineRunner {
         String title = split[0];
         String publisherName = split[1];
         URI banner = URI.create(split[2]);
+        Genre randomGenre = Genre.values()[ThreadLocalRandom.current().nextInt(0,4)];
         return MovieEntity.builder()
                 .title(title)
                 .publisher(Publisher.builder().name(publisherName).build())
                 .banner(banner)
+                .genre(randomGenre)
                 .build();
     }
 
