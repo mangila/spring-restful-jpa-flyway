@@ -29,12 +29,12 @@ public class ActorService {
         return mapper.toDto(repository.findAll());
     }
 
-    public PageDTO<ActorDTO> findAll(int page) {
-        Page<ActorEntity> pagination = repository.findAll(PageRequest.of(page, 10));
+    public PageDTO<ActorDTO> findAll(int page, int size) {
+        Page<ActorEntity> pagination = repository.findAll(PageRequest.of(page, size));
         return PageDTO.<ActorDTO>builder()
                 .content(mapper.toDto(pagination.toList()))
                 .page(page)
-                .size(10)
+                .size(size)
                 .isFirst(pagination.isFirst())
                 .isLast(pagination.isLast())
                 .totalElements(pagination.getTotalElements())
