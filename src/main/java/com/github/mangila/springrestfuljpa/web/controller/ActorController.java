@@ -2,12 +2,10 @@ package com.github.mangila.springrestfuljpa.web.controller;
 
 import com.github.mangila.springrestfuljpa.service.ActorService;
 import com.github.mangila.springrestfuljpa.web.dto.ActorDTO;
+import com.github.mangila.springrestfuljpa.web.dto.PageDTO;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,6 +19,11 @@ public class ActorController {
     @GetMapping
     public ResponseEntity<List<ActorDTO>> findAll() {
         return ResponseEntity.ok(service.findAll());
+    }
+
+    @GetMapping(path = "pagination")
+    public ResponseEntity<PageDTO<ActorDTO>> findAll(@RequestParam int page) {
+        return ResponseEntity.ok(service.findAll(page));
     }
 
     @GetMapping(path = "{id}")
