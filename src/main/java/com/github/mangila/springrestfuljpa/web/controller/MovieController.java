@@ -2,12 +2,11 @@ package com.github.mangila.springrestfuljpa.web.controller;
 
 import com.github.mangila.springrestfuljpa.service.MovieService;
 import com.github.mangila.springrestfuljpa.web.dto.MovieDTO;
+import com.github.mangila.springrestfuljpa.web.dto.PageDTO;
 import lombok.AllArgsConstructor;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,6 +20,12 @@ public class MovieController {
     @GetMapping
     public ResponseEntity<List<MovieDTO>> findAll() {
         return ResponseEntity.ok(service.findAll());
+    }
+
+    @GetMapping(path = "pagination", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<PageDTO<MovieDTO>> findAll(@RequestParam int page,
+                                                     @RequestParam(defaultValue = "3") int size) {
+        return ResponseEntity.ok(service.findAll(page, size));
     }
 
     @GetMapping(path = "{id}")
