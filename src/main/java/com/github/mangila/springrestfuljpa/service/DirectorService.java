@@ -1,10 +1,8 @@
 package com.github.mangila.springrestfuljpa.service;
 
-import com.github.mangila.springrestfuljpa.persistence.entity.ActorEntity;
 import com.github.mangila.springrestfuljpa.persistence.entity.DirectorEntity;
 import com.github.mangila.springrestfuljpa.persistence.repository.DirectorRepository;
 import com.github.mangila.springrestfuljpa.service.mapper.DirectorMapper;
-import com.github.mangila.springrestfuljpa.web.dto.ActorDTO;
 import com.github.mangila.springrestfuljpa.web.dto.DirectorDTO;
 import com.github.mangila.springrestfuljpa.web.dto.PageDTO;
 import lombok.AllArgsConstructor;
