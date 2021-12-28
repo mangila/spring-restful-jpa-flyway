@@ -2,3 +2,7 @@ spring:
   jpa:
     hibernate:
       ddl-auto: create
+
+springdoc:
+  api-docs:
+    enabled: false

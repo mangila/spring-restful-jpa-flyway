@@ -10,6 +10,7 @@ import com.github.mangila.springrestfuljpa.persistence.repository.DirectorReposi
 import com.github.mangila.springrestfuljpa.persistence.repository.MovieRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Profile;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Component;
 
@@ -22,6 +23,7 @@ import java.util.stream.Collectors;
 
 @Component
 @AllArgsConstructor
+@Profile("dev")
 public class DatabaseSeeder implements CommandLineRunner {
 
     private final ActorRepository actorRepository;
