@@ -1,7 +1,21 @@
 package com.github.mangila.springrestfuljpa.service;
 
-import static org.junit.jupiter.api.Assertions.*;
+import com.github.mangila.springrestfuljpa.ReusableMySQLContainer;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
-class DirectorServiceTest {
+import static org.assertj.core.api.Assertions.assertThat;
+
+@SpringBootTest
+class DirectorServiceTest extends ReusableMySQLContainer {
+
+    @Autowired
+    private DirectorService service;
+
+    @Test
+    void test() {
+        assertThat(service.findAll()).isEmpty();
+    }
 
 }

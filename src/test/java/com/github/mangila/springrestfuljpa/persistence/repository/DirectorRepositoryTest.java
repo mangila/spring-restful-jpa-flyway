@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Import;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @DataJpaTest
-@Import(value = {JpaConfig.class, DatabaseSeeder.class})
+@Import(value = {JpaConfig.class})
 class DirectorRepositoryTest {
 
     @Autowired
@@ -18,6 +18,6 @@ class DirectorRepositoryTest {
 
     @Test
     void test() {
-        assertThat(repository.findAll()).isNotEmpty();
+        assertThat(repository.findAll()).isEmpty();
     }
 }
