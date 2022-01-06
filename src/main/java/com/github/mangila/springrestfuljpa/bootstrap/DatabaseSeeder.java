@@ -34,9 +34,9 @@ public class DatabaseSeeder implements CommandLineRunner {
     @Transactional
     public void run(String... args) throws Exception {
 
-        var moviesResource = new ClassPathResource("data/movies.csv");
-        var actorsResource = new ClassPathResource("data/actors.csv");
-        var directorsResource = new ClassPathResource("data/directors.csv");
+        var moviesResource = new ClassPathResource("csv/movies.csv");
+        var actorsResource = new ClassPathResource("csv/actors.csv");
+        var directorsResource = new ClassPathResource("csv/directors.csv");
 
         try (var movieReader = new BufferedReader(new InputStreamReader(moviesResource.getInputStream()));
              var actorReader = new BufferedReader(new InputStreamReader(actorsResource.getInputStream()));
