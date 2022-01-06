@@ -1,6 +1,5 @@
 package com.github.mangila.springrestfuljpa.persistence.repository;
 
-import com.github.mangila.springrestfuljpa.bootstrap.DatabaseSeeder;
 import com.github.mangila.springrestfuljpa.config.JpaConfig;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

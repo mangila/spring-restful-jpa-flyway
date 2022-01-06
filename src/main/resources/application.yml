@@ -1,14 +1,3 @@
-spring:
-  jpa:
-    show-sql: false
-    hibernate:
-      ddl-auto: none
-  h2:
-    console:
-      enabled: false
-      settings:
-        trace: false
-
 springdoc:
   swagger-ui:
     path: /swagger-ui.html
