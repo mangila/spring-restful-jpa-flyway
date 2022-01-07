@@ -5,14 +5,14 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.6.1</version>
+        <version>2.6.2</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.github.mangila</groupId>
-    <artifactId>spring-restful-jpa</artifactId>
+    <artifactId>spring-restful-jpa-flyway</artifactId>
     <version>1.0</version>
-    <name>spring-restful-jpa</name>
-    <description>spring-restful-jpa</description>
+    <name>spring-restful-jpa-flyway</name>
+    <description>spring-restful-jpa-flyway</description>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
