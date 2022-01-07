@@ -17,8 +17,13 @@ class MovieServiceTest {
     private MovieService service;
 
     @Test
-    void test() {
-        assertThat(service.findAll()).isEmpty();
+    void shouldFindAll() {
+        assertThat(service.findAll()).isNotEmpty();
+    }
+
+    @Test
+    void shouldFindOne() {
+        assertThat(service.findById(1L)).isNotNull();
     }
 
 }

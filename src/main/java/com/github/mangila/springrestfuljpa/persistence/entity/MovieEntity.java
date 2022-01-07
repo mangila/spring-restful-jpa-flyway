@@ -44,7 +44,7 @@ public class MovieEntity extends Auditable {
     @Convert(converter = URIConverter.class)
     private URI banner;
 
-    @ManyToMany(targetEntity = ActorEntity.class, mappedBy = "movies", cascade = CascadeType.ALL)
+    @ManyToMany(targetEntity = ActorEntity.class, mappedBy = "movies", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private final Set<ActorEntity> actors = new HashSet<>();
 
     public void addActor(ActorEntity actorEntity) {

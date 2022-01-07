@@ -24,12 +24,22 @@ class DirectorControllerTest {
     private MockMvc mockMvc;
 
     @Test
-    void test() throws Exception {
+    void shouldFindAll() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders
                         .get("/api/v1/director")
                         .accept(MediaType.APPLICATION_JSON))
                 .andDo(print())
                 .andExpect(status().isOk())
-                .andExpect(MockMvcResultMatchers.jsonPath("$").isEmpty());
+                .andExpect(MockMvcResultMatchers.jsonPath("$").isNotEmpty());
+    }
+
+    @Test
+    void shouldFindOne() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders
+                        .get("/api/v1/director/1")
+                        .accept(MediaType.APPLICATION_JSON))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(MockMvcResultMatchers.jsonPath("$").isNotEmpty());
     }
 }

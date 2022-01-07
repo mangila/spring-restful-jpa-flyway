@@ -24,12 +24,22 @@ class MovieControllerTest {
     private MockMvc mockMvc;
 
     @Test
-    void test() throws Exception {
+    void shouldFindAll() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders
                         .get("/api/v1/movie")
                         .accept(MediaType.APPLICATION_JSON))
                 .andDo(print())
                 .andExpect(status().isOk())
-                .andExpect(MockMvcResultMatchers.jsonPath("$").isEmpty());
+                .andExpect(MockMvcResultMatchers.jsonPath("$").isNotEmpty());
+    }
+
+    @Test
+    void shouldFindOne() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders
+                        .get("/api/v1/movie/1")
+                        .accept(MediaType.APPLICATION_JSON))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(MockMvcResultMatchers.jsonPath("$").isNotEmpty());
     }
 }

@@ -33,7 +33,7 @@ public class DirectorEntity extends Auditable {
     @JoinColumn(name = "actor_id")
     private ActorEntity actor;
 
-    @OneToMany(targetEntity = MovieEntity.class, mappedBy = "director")
+    @OneToMany(targetEntity = MovieEntity.class, mappedBy = "director", fetch = FetchType.EAGER)
     private final Set<MovieEntity> movies = new HashSet<>();
 
     public void isActor(ActorEntity entity) {
