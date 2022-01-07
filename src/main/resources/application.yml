@@ -1,3 +1,13 @@
+spring:
+  flyway:
+    locations: classpath:flyway
+    enabled: true
+    baseline-on-migrate: true
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+
 springdoc:
   swagger-ui:
     path: /swagger-ui.html

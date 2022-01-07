@@ -1,4 +1,4 @@
-# spring-restful-jpa
+# spring-restful-jpa-flyway
 
 Movie,actor & director RESTful API. <br>
-Sample app to utilize as much as possible from the spring-data-jpa module.
+Sample app with jpa, flyway and testcontainers.

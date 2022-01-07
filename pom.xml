@@ -83,6 +83,11 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>${mysql-connector-java.version}</version>
         </dependency>
+        <!-- Flyway -->
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
+        </dependency>
         <!-- Lombok n Mapstruct -->
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -131,17 +136,6 @@
                             <artifactId>lombok</artifactId>
                         </exclude>
                     </excludes>
-                </configuration>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <configuration>
-                    <systemPropertyVariables>
-                        <testEnvironment>true</testEnvironment>
-                    </systemPropertyVariables>
-                    <argLine>-Dspring.profiles.active=test</argLine>
                 </configuration>
             </plugin>
 

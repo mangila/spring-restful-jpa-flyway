@@ -1,0 +1,17 @@
+spring:
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    locations: classpath:flyway
+  datasource:
+    url: jdbc:tc:mysql:8.0:///test
+    username: user
+    password: password
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+
+springdoc:
+  api-docs:
+    enabled: false
