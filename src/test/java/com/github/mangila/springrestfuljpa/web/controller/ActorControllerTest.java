@@ -43,4 +43,24 @@ class ActorControllerTest {
                 .andExpect(MockMvcResultMatchers.jsonPath("$").isNotEmpty());
     }
 
+    @Test
+    void shouldReturn404() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders
+                        .get("/api/v1/actor/-1")
+                        .accept(MediaType.APPLICATION_JSON))
+                .andDo(print())
+                .andExpect(status().isNotFound())
+                .andExpect(MockMvcResultMatchers.jsonPath("$").isNotEmpty());
+    }
+
+    @Test
+    void shouldReturn500() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders
+                        .get("/api/v1/actor/id-does-not-exists")
+                        .accept(MediaType.APPLICATION_JSON))
+                .andDo(print())
+                .andExpect(status().isInternalServerError())
+                .andExpect(MockMvcResultMatchers.jsonPath("$").isNotEmpty());
+    }
+
 }

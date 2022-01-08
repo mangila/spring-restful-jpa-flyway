@@ -6,7 +6,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.testcontainers.junit.jupiter.Testcontainers;
 
+import java.util.NoSuchElementException;
+
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 @SpringBootTest
 @Testcontainers
@@ -24,6 +27,11 @@ class MovieServiceTest {
     @Test
     void shouldFindOne() {
         assertThat(service.findById(1L)).isNotNull();
+    }
+
+    @Test
+    void shouldThrow() {
+        assertThatThrownBy(() -> service.findById(-1L)).isInstanceOf(NoSuchElementException.class);
     }
 
 }
