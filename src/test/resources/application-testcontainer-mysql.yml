@@ -8,6 +8,11 @@ spring:
     username: user
     password: password
   jpa:
+    properties:
+      hibernate:
+        generate_statistics: true
+        jdbc:
+          batch_size: 10
     hibernate:
       ddl-auto: none
     show-sql: true
