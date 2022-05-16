@@ -8,6 +8,7 @@ Sample app with jpa, flyway and testcontainers.
 * https://hub.docker.com/r/mangila/spring-restful-jpa-flyway
 * ```docker run -d -p 8080:8080 mangila/spring-restful-jpa-flyway```
 * ```docker run -d -p 8080:8080 -e "SPRING_PROFILES_ACTIVE=dev" mangila/spring-restful-jpa-flyway```
+* ``docker-compose up -d``
 
 ## DB
 

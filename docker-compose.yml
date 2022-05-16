@@ -1,0 +1,19 @@
+services:
+  database:
+    image: mysql:8.0.28
+    environment:
+      MYSQL_USER: mangila
+      MYSQL_PASSWORD: password
+      MYSQL_DATABASE: db
+      MYSQL_ALLOW_EMPTY_PASSWORD: 1
+    ports:
+      - "3306:3306"
+  api:
+    restart: always
+    image: mangila/spring-restful-jpa-flyway
+    environment:
+      - "SPRING_PROFILES_ACTIVE=prod"
+    ports:
+      - "8080:8080"
+    depends_on:
+      - database

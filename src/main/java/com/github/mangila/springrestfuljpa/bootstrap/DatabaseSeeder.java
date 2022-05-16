@@ -23,7 +23,6 @@ import java.util.stream.Collectors;
 
 @Component
 @AllArgsConstructor
-@Profile(value = {"dev", "testcontainer-mysql"})
 public class DatabaseSeeder implements CommandLineRunner {
 
     private final ActorRepository actorRepository;

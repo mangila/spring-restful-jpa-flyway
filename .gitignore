@@ -1,3 +1,4 @@
+*.h2.db
 ### PLUGIN ###
 .jpb/
 HELP.md
